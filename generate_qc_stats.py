@@ -71,11 +71,13 @@ def main():
 			if z[k] == 2:
 				if type == "INDEL":
 					inmap[id][26] += 1
+					inmap[id][2] += 2
 				elif type == "SNP":
 					inmap[id][5] += 1
 			elif z[k] == 1:
 				if type == "INDEL":
 					inmap[id][27] += 1
+					inmap[id][2] += 1
 				elif type == "SNP":
 					inmap[id][4] += 1
 					if chg in transition:
