@@ -1,16 +1,16 @@
 import sys
 import os
-from scipy.stats import binom_test as btest
+from scipy.stats import binomtest as btest
 
 def main():
 	if len(sys.argv) < 4:
         print("Usage: python3 generate_sdt_counts.py input_mutations_file famfile outputfile")
 		exit(1)
-	
-    infile = sys.argv[1]
+		
+	infile = sys.argv[1]
 	famfile = sys.argv[2]
-    outfile = sys.argv[3]
-    
+	outfile = sys.argv[3]
+	
 	fam = [l.strip() for l in open(famfile)]
 	cases = []
 	controls = []
@@ -21,13 +21,13 @@ def main():
 		elif x[5] == '1':
 			controls.append(x[1])
             
-    Ncase = len(cases)
-    Ncontrol = len(control)
-    Ntotal = Ncase + Ncontrol
+	Ncase = len(cases)
+	Ncontrol = len(controls)
+	Ntotal = Ncase + Ncontrol
     
-    singletonP = Ncase / Ntotal
-    doubletonP = 2 * Ncase/Ntotal * Ncontrol/Ntotal
-    tripletonP = 1 - (Ncase/Ntotal)**3 - (Ncontrol/Ntotal)**3
+	singletonP = Ncase / Ntotal
+	doubletonP = 2 * Ncase/Ntotal * Ncontrol/Ntotal
+	tripletonP = 1 - (Ncase/Ntotal)**3 - (Ncontrol/Ntotal)**3
 
 	scase = [0,0]
 	scon = [0,0]
@@ -39,8 +39,10 @@ def main():
 	tsh = [0,0]
 
 	lines = [l.strip() for l in open(infile)]
-	for l in lines:
+	for l in lines[1:]:
 		x = l.split('\t')
+		if x[2] == "INDEL":
+			continue
 		y = x[23].split(';')
 		ncase = len([v for v in y if v in cases])
 		ncontrol = len([v for v in y if v in controls])
