@@ -93,13 +93,13 @@ def main():
 					tsh[1] += 1
 					
     
-    syn_singleton_pval = btest(scase[0], scase[0]+scon[0], singletonP, alternative="greater")
-    syn_doubleton_pval = btest(dsh[0], dcase[0]+dcon[0]+dsh[0], doubletonP, alternative="less")
-    syn_tripleton_pval = btest(tsh[0], tcase[0]+tcon[0]+tsh[0], tripletonP, alternative="less")
+    syn_singleton_pval = btest(scase[0], scase[0]+scon[0], singletonP, alternative="greater").pvalue
+    syn_doubleton_pval = btest(dsh[0], dcase[0]+dcon[0]+dsh[0], doubletonP, alternative="less").pvalue
+    syn_tripleton_pval = btest(tsh[0], tcase[0]+tcon[0]+tsh[0], tripletonP, alternative="less").pvalue
     
-    mis_singleton_pval = btest(scase[1], scase[1]+scon[1], singletonP, alternative="greater")
-    mis_doubleton_pval = btest(dsh[1], dcase[1]+dcon[1]+dsh[1], doubletonP, alternative="less")
-    mis_tripleton_pval = btest(tsh[1], tcase[1]+tcon[1]+tsh[1], tripletonP, alternative="less")
+    mis_singleton_pval = btest(scase[1], scase[1]+scon[1], singletonP, alternative="greater").pvalue
+    mis_doubleton_pval = btest(dsh[1], dcase[1]+dcon[1]+dsh[1], doubletonP, alternative="less").pvalue
+    mis_tripleton_pval = btest(tsh[1], tcase[1]+tcon[1]+tsh[1], tripletonP, alternative="less").pvalue
     
     
     of = open(outfile, "w")
