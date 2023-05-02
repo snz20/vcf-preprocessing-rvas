@@ -109,9 +109,9 @@ def main():
     of.write("Tripleton\t"+str(tcase[0]) + '\t' + str(tcon[0]) + '\t' + str(tsh[0]) + '\t' + str(tripletonP) + '\t' + str(syn_tripleton_pval) + '\n')
     
     of.write("Missense\n")
-    of.write("Singleton\t"+str(scase[1]) + '\t' + str(scon[1]) + '\t\t' + str(singletonP) + '\t' + str(syn_singleton_pval) + '\n')
-    of.write("Doubleton\t"+str(dcase[1]) + '\t' + str(dcon[1]) + '\t' + str(dsh[1]) + '\t' + str(doubletonP) + '\t' + str(syn_doubleton_pval) + '\n')
-    of.write("Tripleton\t"+str(tcase[1]) + '\t' + str(tcon[1]) + '\t' + str(tsh[1]) + '\t' + str(tripletonP) + '\t' + str(syn_tripleton_pval) + '\n')
+    of.write("Singleton\t"+str(scase[1]) + '\t' + str(scon[1]) + '\t\t' + str(singletonP) + '\t' + str(mis_singleton_pval) + '\n')
+    of.write("Doubleton\t"+str(dcase[1]) + '\t' + str(dcon[1]) + '\t' + str(dsh[1]) + '\t' + str(doubletonP) + '\t' + str(mis_doubleton_pval) + '\n')
+    of.write("Tripleton\t"+str(tcase[1]) + '\t' + str(tcon[1]) + '\t' + str(tsh[1]) + '\t' + str(tripletonP) + '\t' + str(mis_tripleton_pval) + '\n')
     
     of.close()
     
