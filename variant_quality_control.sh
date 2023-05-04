@@ -58,7 +58,7 @@ vcftools --gzvcf $INPUT_VCF_GZ \
    --remove-filtered-all \
    --minQ 90 \
    --hwe 0.001 \
-   --recode --recode-INFO-all --stdout | bgzip -c > $QC_VCF_GZ
+   --recode --recode-INFO-all --stdout | bcftools annotate -x ^FORMAT/GT | bgzip -c > $QC_VCF_GZ
 
 
 # Annotation with SnpEff and SnpSift
