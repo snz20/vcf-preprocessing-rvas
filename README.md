@@ -1,6 +1,6 @@
 # vcf-preprocessing-rvas
 ## Step 1: Filter variants and annotate
-run `./variant_filter_annotate.sh input.vcf.gz filter1_output.vcf.gz snpeff_output.vcf.gz snpsift_output.vcf.gz`
+run `./variant_quality_control.sh input.vcf.gz filter1_output.vcf.gz snpeff_output.vcf.gz snpsift_output.vcf.gz`
 ## Step 2: Use GATK best practices filter to further filter
 run `./hard_filter.py input.vcf output.vcf`
 ## Step 3: Determine sample ancestry and remove samples of non European ancestry
